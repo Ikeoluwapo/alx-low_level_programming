@@ -728,6 +728,5 @@ extern int __overflow (FILE *, int);
 # 3 "main.c"
 int main(void)
 {
-  Printf ($CFILE)
-      return (0);
+ return (0);
 }

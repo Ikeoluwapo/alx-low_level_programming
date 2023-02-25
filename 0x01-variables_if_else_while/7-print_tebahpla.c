@@ -4,7 +4,7 @@
 /**
  * main - Entry point
  * Print lowercase letters in reverse order
- * Return 0
+ * Return: 0 when successful
  */
 
 int main(void)

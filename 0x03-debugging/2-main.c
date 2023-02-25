@@ -2,6 +2,7 @@
 #include "main.h"
 #include <stdlib.h>
 
+int largest_number(a,b,c)
 int main(void)
 {
 	int a, b, c;

@@ -2,7 +2,12 @@
 #include "main.h"
 #include <stdlib.h>
 
-int largest_number(a,b,c)
+/**
+ * main - prints the largests of three numbers
+ *
+ * Return: 0
+ */
+
 int main(void)
 {
 	int a, b, c;
@@ -13,7 +18,7 @@ int main(void)
 	c = 0;
 
 	largest = largest_number(a, b, c);
-	
+
 	printf("%d is the largest number\n", largest);
 
 	return (0);

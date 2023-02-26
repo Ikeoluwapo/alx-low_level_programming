@@ -1,19 +1,19 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * print_alphabet(void)
  *
  * Return: Always 0
  */
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet(k);
 	char k;
 
 	for (k = 'a'; k <= 'z'; k++)
 	{
 		putchar(k);
 	}
-	putchar("\n");
+	putchar('\n';
 	return (0);
 }

@@ -1,5 +1,6 @@
-#include "main.h"
 #include <stdio.h>
+#include "main.h"
+#include <string.h>
 
 /**
  * rev_string - reverses a string
@@ -14,7 +15,6 @@ void rev_string(char *s)
 
 	while (count >= 0)
 	{
-
 		if (s[count] == '\0')
 
 			break;

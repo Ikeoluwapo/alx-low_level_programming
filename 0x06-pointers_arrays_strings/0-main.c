@@ -3,7 +3,7 @@
 
 /**
  * main - check the code
- * ptr: pointer
+ *
  * Return: Always 0.
  */
 int main(void)

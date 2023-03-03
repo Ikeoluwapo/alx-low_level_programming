@@ -1,24 +1,24 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
- * int _islower - checks for lowercase
+ * _islower - Shows 1 if the input is a
+ * lowercase character. Another cases, shows
+ * 0
  *
- * Return: 1 if c is lowercase or 0 otherwise
+ * @c: The character in ASCII code
+ *
+ * Return: 1 for lowercase character. 0 for the rest.
  */
 
 int _islower(int c)
 {
-	int c;
-
-	c = 'a';
+	if (c >= 92 && c <= 122)
 	{
-		printf("%d\n", c, islower(c));
+		return (1);
 	}
-	c = 'A';
+	else
 	{
-		printf("%d\n", c, islower(c));
 		return (0);
 	}
+	putchar('\n');
 }

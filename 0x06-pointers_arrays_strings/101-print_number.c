@@ -2,23 +2,35 @@
 #include <stdio.h>
 
 /**
- * print_number - print numbers chars
- * @n: integer params
- * Return: 0
+ * print_number - prints an integer.
+ * @n: input integer.
+ * Return: no return.
  */
 void print_number(int n)
 {
-	unsigned int n1;
+	unsigned int m, d, count;
 
-	n1 = n;
 	if (n < 0)
 	{
-		putchar('-');
-		n1 = -n;
+		putchar(45);
+		m = n * -1;
 	}
-	if (n1 / 10 != 0)
+	else
 	{
-		print_number(n1 / 10);
+		m = n;
 	}
-	putchar((n1 % 10) + '0');
+
+	d = m;
+	count = 1;
+
+	while (d > 9)
+	{
+		d /= 10;
+		count *= 10;
+	}
+
+	for (; count >= 1; count /= 10)
+	{
+		putchar(((m / count) % 10) + 48);
+	}
 }

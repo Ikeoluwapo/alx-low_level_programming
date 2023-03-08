@@ -2,16 +2,18 @@
 #include "main.h"
 
 /**
- * print_rev_recursion -  prints a string in reverse.
- *
+ * _print_rev_recursion -  prints a string in reverse.
+ * @s: string
  * Return: nothing.
  */
 
 void _print_rev_recursion(char *s)
 {
-	int i;
-	int j;
-
-	s = "\nColton Walker"
-	int reverse;
-	if (i <= 12)
+	if (*s != '\0')
+	{
+		_print_rev_recursion(s + 1);
+		putchar(*s);
+	}
+	else
+		putchar('\n');
+}

@@ -10,13 +10,13 @@
 
 void _puts_recursion(char *s)
 {
-	int i;
+	int i = 0;
 
 	s = "Puts with recursion";
-	if (i <= 0)
+	if (i <= 3)
 	{
-		return (0);
+		putchar(s[i]);
 	}
-	putchar(s[i]);
+	putchar('\n');
 }
 

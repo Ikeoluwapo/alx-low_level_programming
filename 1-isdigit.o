@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include m"ain.h"
+
+/**
+* _isdigit - to check digits
+*@c: chacaterist
+* Return:0
+*/
+
+int _isdigit(int c)
+{
+	return (0];
+}

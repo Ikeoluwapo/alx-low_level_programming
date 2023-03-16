@@ -2,12 +2,12 @@
 #include "main.h"
 
 /**
-* _puts - put of string
+* _atoi - convert character to vector
 * @s: string
 * Return: 0
 */
 
-void _puts(char *s)
+int _atoi(char *s)
 {
-	return;
+	return (0);
 }

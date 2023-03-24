@@ -9,11 +9,13 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	struct dog newdog;
-	struct dog *new_d = &newdog;
+	struct dog *new_d;
 
-	newdog.name = name;
-	newdog.age = age;
-	newdog.owner = owner;
+	new_d = malloc(sizeof(struct dog));
+	if (new_d == NULL)
+		return (NULL);
+	(*new_d).name = name;
+	(*new_d).age = age;
+	(*new_d).owner = owner;
 	return (new_d);
 }

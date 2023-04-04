@@ -6,7 +6,6 @@
  *
  *
  */
-
 typedef struct list_s list_t;
 
 /**

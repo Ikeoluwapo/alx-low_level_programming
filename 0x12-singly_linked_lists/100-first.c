@@ -4,7 +4,12 @@
 #include "lists.h"
 #include <stdio.h>
 
-void print_tortoise_string(void) __attribute__ ((constructor));
+
+/**
+ * print_tortoise_string - to print before main
+ *
+ *
+ */
 
 void print_tortoise_string(void)
 {

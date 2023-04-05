@@ -15,7 +15,7 @@ void free_list(list_t *head)
 
 	{
 		head = malloc(sizeof(list_t));
-		while(head != NULL)
+		while (head != NULL)
 		{
 			temp = head;
 

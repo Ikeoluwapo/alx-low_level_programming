@@ -6,11 +6,10 @@
 
 /**
  * add_node - to add a new node
- * @new_node: pojbtwr to new node
- *
+ * @head: head of node
+ * @str: pointer to string
  * Return: new node
  */
-
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new_node;
@@ -38,11 +37,11 @@ list_t *add_node(list_t **head, const char *str)
 }
 
 /**
- * int_strlen: to check length of string
- * @len: length
- *
+ * _strlen- function to check length of string
+ * @s: pointer to character
  * Return: len
  */
+
 unsigned int _strlen(const char *s)
 {
 	unsigned int len = 0;

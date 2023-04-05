@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "string.h"
+#include <string.h>
 #include "lists.h"
 
 
@@ -13,7 +13,7 @@
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *new_node, *temp;
+	list_t *new_node;
 	{
 		new_node = malloc(sizeof(list_t));
 		if (new_node == NULL)
@@ -31,11 +31,11 @@ list_t *add_node_end(list_t **head, const char *str)
 		new_node->next = NULL;
 		if (*head == NULL)
 		{
-			*head == new_node;
+			*head = new_node;
 		}
 		else
 		{
-			*temp = *head;
+			list_t *temp = *head;
 			while (temp->next != NULL)
 			{
 				temp = temp->next;

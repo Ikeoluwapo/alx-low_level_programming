@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "lists.h"
+#include <stdio.h>
 
-/**
- * print_tortoise_string - to print a string
- *
- * Return: void
- */
+void print_tortoise_string(void) __attribute__ ((constructor));
 
 void print_tortoise_string(void)
 {

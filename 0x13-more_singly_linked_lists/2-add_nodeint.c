@@ -3,6 +3,13 @@
 #include <string.h>
 #include "lists.h"
 
+
+/**
+ * add_nodeint - to add node at the beginning
+ * @n: integer
+ * Return: 0
+ */
+
 listint_t *add_nodeint(listint_t **head, const int n)
 {
 

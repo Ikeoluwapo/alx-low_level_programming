@@ -7,6 +7,7 @@
 /**
  * add_nodeint - to add node at the beginning
  * @n: integer
+ * @head: pointing to head
  * Return: 0
  */
 

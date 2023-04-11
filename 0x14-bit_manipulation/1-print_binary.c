@@ -16,7 +16,7 @@ void print_binary(unsigned long int n)
     /* Finding the position of the leftmost 1 bit */
 	for (i = num - 1; i >= 0; i--)
 	{
-		if (((n >> i) & 1) || ((n >> i) & 0))
+		if ((n >> i) & 1)
 		{
 			break;
 		}

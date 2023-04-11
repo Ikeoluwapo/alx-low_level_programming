@@ -3,20 +3,28 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int i = 0;
+	int num = sizeof(unsigned long int) * 8;
+	int i;
 
-	int j;
-	
-	unsigned long int num = 0;
-
-	for (i = 0; i <= n; i++)
+    /* Finding the position of the leftmost 1 bit */
+	for (i = num - 1; i >= 0; i--)
 	{
-		num = n % 2;
-		
-		n = n / 2;
+		if (((n >> i) & 1) || ((n >> i) & 0))
+		{
+			break;
+		}
 	}
-	for (j = i - 1; j >= 0; j--) 
+
+    /* Print the binary digits */
+	for (; i >= 0; i--)
 	{
-		printf("%ld", num);
+		if ((n >> i) & 1)
+		{
+			printf("1");
+		}
+		else
+		{
+			printf("0");
+		}
 	}
 }

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "main.h"
+#include <unistd.h>
 
 /**
  * _putchar - put
@@ -9,5 +10,5 @@
 
 int _putchar(char c)
 {
-	return (0);
+	return write(1, &c, 1);
 }

@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include "main.h"
 
+/**
+ * print_binary - to convert to binary
+ * @n: variable containing numbers
+ *
+ * Return: no eeturn value, void
+ */
+
 void print_binary(unsigned long int n)
 {
 	int num = sizeof(unsigned long int) * 8;

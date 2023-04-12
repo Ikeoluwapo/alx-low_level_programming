@@ -12,9 +12,9 @@ int get_endianness(void)
 {
 	int *ptr;
 
-	int n = 1;
+	int n = 0;
 
 	ptr = &n;
 
-	return (*ptr == 1);
+	return (*ptr);
 }

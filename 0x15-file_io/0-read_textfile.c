@@ -13,8 +13,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 
 	char ch;
+	char *buffer;
+
 	FILE *fp = NULL;
 	size_t count = 0;
+
+	if (filename == NULL)
+	{
+		return (0);
+	}
 
 	fp = fopen(filename, "r");
 
@@ -22,11 +29,22 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		return (0);
 	}
+
 	while ((ch = fgetc(fp)) != feof(fp) && count < letters)
 	{
 		printf("%c/n", ch);
 		count++;
 	}
+	
+	buffer = malloc(sizeof(char) * letters);
+	if (buffer == NULL)
+	{
+		fclose(fp);
+		return (0);
+	}
+
+	count = fread(buffer, sizeof(char), letters, fp);
+
 	fclose(fp);
 	return (count);
 }

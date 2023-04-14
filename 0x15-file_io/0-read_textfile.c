@@ -30,12 +30,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
+
 	while ((ch = fgetc(fp)) != feof(fp) && count < letters)
 	{
 		printf("%c/n", ch);
 		count++;
 	}
-	
+
 	buffer = malloc(sizeof(char) * letters);
 	if (buffer == NULL)
 	{
@@ -46,5 +47,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	count = fread(buffer, sizeof(char), letters, fp);
 
 	fclose(fp);
+	free(buffer);
 	return (count);
 }

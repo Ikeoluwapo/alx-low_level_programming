@@ -4,8 +4,8 @@
 
 /**
  * read_textfile - to read and print text in file
- * @fp: pointer to File
- * @ch: variable
+ * @letters: no of letters to read and print
+ * @filename: name of file
  * Return: letters
  */
 
@@ -16,18 +16,17 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	FILE *fp = NULL;
 	size_t count = 0;
 
-	fp = fopen (filename, "r");
-	
+	fp = fopen(filename, "r");
+
 	if (fp == NULL)
 	{
-	       	return (0);
+		return (0);
 	}
-	
 	while ((ch = fgetc(fp)) != feof(fp) && count < letters)
-	{	
+	{
 		printf("%c/n", ch);
 		count++;
 	}
-	fclose (fp);
+	fclose(fp);
 	return (count);
 }

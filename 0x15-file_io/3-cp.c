@@ -7,6 +7,13 @@
 
 #define BUF_SIZE 1024
 
+
+/**
+ * main - to copy file
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: 0
+ */
 int main(int argc, char **argv)
 {
 	FILE *fpfrom, *fpto;

@@ -16,7 +16,7 @@
  */
 int main(int argc, char **argv)
 {
-	FILE *fpfrom, *fpto;
+	FILE *fpfrom,  *fdt;
 	int byte_read;
 	char buf[BUF_SIZE];
 
@@ -37,28 +37,34 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can't open from file %s (%s)\n", argv[1], strerror(errno));
 		exit(1);
 	}
-	fpto = fopen(argv[2], "w");
-	if (fpto == NULL)
+	fd = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 664);
+	if (fd == -1)
 	{
-		fprintf(stderr, "Error: Can't open to write %s (%s)\n", argv[2], strerror(errno));
-		fclose(fpfrom);
+		fprintf(stderr, "Error: Can't open to write %s (%s)\n", argv[2], strerror(errno);
 		exit(1);
+	}
+	fdt = fdopen(fd, "w");
+	if (fdt == NULL)
+	{
+		fprintf(stderr, "Error: Can't open to write %s (%s)\n", argv[2], strerror(errno);
+		close(fd);
+		exit(98);
 	}
 	if (truncate(argv[2], 0) != 0)
 	{
 		fprintf(stderr, "Error: Can't truncate file %s (%s)\n", argv[2], strerror(errno));
 		fclose(fpfrom);
-		fclose(fpto);
+		fclose(fdt);
 		exit(1);
 	}
 
 	while ((byte_read = fread(buf, 1, BUF_SIZE, fpfrom)) > 0)
 	{
-		if (fwrite(buf, 1, (size_t) byte_read, fpto) != (size_t) byte_read)
+		if (fwrite(buf, 1, (size_t) byte_read, fdt) != (size_t) byte_read)
 		{
 			fprintf(stderr, "Error: Can't write to file %s (%s)\n", argv[2], strerror(errno));
 			fclose(fpfrom);
-			fclose(fpto);
+			fclose(fdt);
 			exit(99);
 		}
 
@@ -67,10 +73,10 @@ int main(int argc, char **argv)
 	{
 		fprintf(stderr, "Error: Can't read from file %s (%s)\n", argv[1], strerror(errno));
 		fclose(fpfrom);
-		fclose(fpto);
+		fclose(fdt);
 		exit(98);
 	}
 	fclose(fpfrom);
-	fclose(fpto);
+	fclose(fdt);
 	return (0);
 }
